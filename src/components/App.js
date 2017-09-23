@@ -1,24 +1,35 @@
-import React, { Component } from 'react';
-import { getCategories } from '../utils/api'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Categories from "./Categories";
+import Posts from "./Posts";
+import { listCategoriesPosts } from "../actions";
 
 class App extends Component {
-	
-	state = {
-		categories: []
-	}
-
 	componentDidMount() {
-		getCategories().then(categories => {
-			this.setState({categories})
-		})
+		this.props.listCategoriesPosts();
 	}
 
 	render() {
-		console.log(this.state.categories)
+		const { categories, posts } = this.props;
 		return (
-			<div>Hello World</div>
+			<div>
+				<Categories categories={categories} />
+				<Posts posts={posts} />
+			</div>
 		);
 	}
 }
+const mapStateToProps = ({ categories, posts }) => {
+	return {
+		categories: categories,
+		posts: posts
+	};
+};
 
-export default App;
+const mapDispatchToProps = dispatch => {
+	return {
+		listCategoriesPosts: () => dispatch(listCategoriesPosts())
+	};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
