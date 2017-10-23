@@ -1,4 +1,5 @@
 import { combineReducers } from "redux";
+
 import { LIST_CATEGORIES, LIST_POSTS } from "../actions";
 
 const categories = (state = [], action) => {

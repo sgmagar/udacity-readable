@@ -43,6 +43,11 @@
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
+.card a {
+    text-decoration: none;
+    color: black;
+}
+
 .title {
     padding-left: 20px;
     border-left: 1px solid #eee;
@@ -83,4 +88,76 @@
     color: #fff;
     padding: 3px 6px;
     margin-left: 3px;
+}
+
+.create-post {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+}
+.create-post a {
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #2e7d32;
+    background-image: url("./icons/add.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-size: 0;
+}
+
+/*form*/
+input[type="text"],
+select {
+    width: 50%;
+    padding: 12px 20px;
+    margin-top: 10px;
+    margin-left: 25%;
+    box-sizing: border-box;
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-left: 25%;
+    cursor: pointer;
+}
+
+.float-right {
+    float: right;
+    cursor: pointer;
+}
+
+.post {
+    margin-right: 20%;
+    margin-left: 20%;
+}
+
+.post-action {
+    margin-left: 5px;
+    opacity: 1;
+    text-transform: none;
+}
+
+.post-action:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/*utility classes*/
+.text-center {
+    text-align: center;
+}
+
+.m-10 {
+    margin: 10;
 }

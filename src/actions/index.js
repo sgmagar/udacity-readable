@@ -1,4 +1,4 @@
-import { getCategories, getPosts } from "../utils/api";
+import { getCategories, getPosts, createPost, deletePost } from "../utils/api";
 export const LIST_CATEGORIES = "LIST_CATEGORIES";
 export const LIST_POSTS = "LIST_POSTS";
 
@@ -28,5 +28,23 @@ export function listCategoriesPosts() {
 	return dispatch => {
 		dispatch(listCategories());
 		dispatch(listPosts());
+	};
+}
+
+export function addPost(data) {
+	return dispatch => {
+		createPost(data).then(response => {
+			console.log(data);
+			console.log(response);
+			dispatch(listPosts());
+		});
+	};
+}
+
+export function removePost(id) {
+	return dispatch => {
+		deletePost(id).then(response => {
+			dispatch(listPosts());
+		});
 	};
 }

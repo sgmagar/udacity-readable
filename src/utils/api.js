@@ -8,3 +8,18 @@ export const getCategories = () => {
 export const getPosts = () => {
 	return fetch(`${base_url}/posts`, headers).then(res => res.json());
 };
+
+export const createPost = data => {
+	return fetch(`${base_url}/posts`, {
+		method: "POST",
+		headers: headers.headers,
+		body: data
+	}).then(res => res.json());
+};
+
+export const deletePost = id => {
+	return fetch(`${base_url}/posts/${id}`, {
+		method: "DELETE",
+		headers: headers.headers
+	});
+};
