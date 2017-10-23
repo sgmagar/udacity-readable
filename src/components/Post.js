@@ -9,6 +9,7 @@ const Post = props => {
 			<div className="content">{post.body}</div>
 			<div className="card-footer">
 				<span className="label">{post.category}</span>
+				<span className="vote">{post.voteScore}</span>
 			</div>
 		</li>
 	);

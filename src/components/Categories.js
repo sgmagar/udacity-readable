@@ -27,7 +27,7 @@ class Categories extends Component {
 					<li
 						key={index}
 						className={
-							active == category.name
+							active === category.name
 								? "nav-item active"
 								: "nav-item"
 						}

@@ -75,5 +75,12 @@
 .label {
     background-color: #070;
     color: #fff;
-    padding: 2px;
+    padding: 2px 4px;
+    margin-right: 3px;
+}
+.vote {
+    background-color: #287;
+    color: #fff;
+    padding: 3px 6px;
+    margin-left: 3px;
 }
